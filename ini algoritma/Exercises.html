@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Apriori Programming Exercises</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link href="css/tooplate-little-fashion.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <section class="preloader">
+      <div class="spinner">
+        <span class="sk-inner-circle"></span>
+      </div>
+    </section>
+
+    <main>
+      <!-- Navigation Bar -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"
+            ><strong><span>Learn</span> Apriori Algorithm</strong></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Apriori</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="examples.html"
+                  >Programming Examples</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="videos.html">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="exercises.html">Exercises</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <style>
+        /* Animasi Gelombang untuk Teks */
+        .wave-text {
+          display: inline-block;
+          font-weight: bold;
+        }
+
+        .wave-text span {
+          display: inline-block;
+          animation: wave 1.5s ease-in-out infinite;
+        }
+
+        /* Keyframes untuk Efek Ombak */
+        @keyframes wave {
+          0%,
+          100% {
+            transform: translateY(0); /* Posisi awal */
+          }
+          50% {
+            transform: translateY(-15px); /* Gerakan naik */
+          }
+        }
+
+        /* Penundaan Animasi untuk Gelombang Teks */
+        .wave-text span:nth-child(1) {
+          animation-delay: 0s;
+        }
+        .wave-text span:nth-child(2) {
+          animation-delay: 0.1s;
+        }
+        .wave-text span:nth-child(3) {
+          animation-delay: 0.2s;
+        }
+        .wave-text span:nth-child(4) {
+          animation-delay: 0.3s;
+        }
+        .wave-text span:nth-child(5) {
+          animation-delay: 0.4s;
+        }
+        .wave-text span:nth-child(6) {
+          animation-delay: 0.5s;
+        }
+        .wave-text span:nth-child(7) {
+          animation-delay: 0.6s;
+        }
+        .wave-text span:nth-child(8) {
+          animation-delay: 0.7s;
+        }
+        .wave-text span:nth-child(9) {
+          animation-delay: 0.8s;
+        }
+
+        .site-header h1 {
+          font-size: 3rem;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 15px;
+        }
+
+        .site-header h1 .text-primary {
+          color: #007bff; /* Warna biru untuk 'Apriori' */
+        }
+      </style>
+
+
+      <header class="site-header banner-header section-padding-img">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-12 header-info">
+              <h1> <span class="wave-text">
+                <span>A</span>
+                <span>p</span>
+                <span>r</span>
+                <span>i</span>
+                <span>o</span>
+                <span>r</span>
+                <span>i</span>
+              </span>
+              <span class="wave-text" style="color: #ff4400;">
+                <span>A</span>
+                <span>l</span>
+                <span>g</span>
+                <span>o</span>
+                <span>r</span>
+                <span>i</span>
+                <span>t</span>
+                <span>h</span>
+                <span>m</span>
+              </span>
+              <span class="wave-text">
+                <span>E</span>
+                <span>x</span>
+                <span>e</span>
+                <span>r</span>
+                <span>c</span>
+                <span>i</span>
+                <span>s</span>
+                <span>e</span>
+                <span>s</span>
+              </span>
+              </h1>
+              <p style="color: #000000;">
+                Practice the concept of the Apriori algorithm through the
+                following practice questions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+ <!--css style section-->
+ <style>.practice {
+  background-color: #ffffff; /* Background putih untuk kontras */
+  border-radius: 10px; /* Sudut bulat */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  padding: 30px; /* Spasi dalam */
+  margin-bottom: 40px; /* Jarak antar section */
+}
+
+.practice h2 {
+  font-size: 2em;
+  color: #ff4400; /* Warna biru untuk judul */
+  text-align: center; /* Pusatkan teks */
+  margin-bottom: 20px;
+  text-transform: uppercase; /* Huruf kapital */
+  letter-spacing: 1.5px; /* Jarak antar huruf */
+}
+
+.practice p {
+  color: #000000; /* Teks deskripsi */
+  font-size: 1.1em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.exercise {
+  background: hsl(26, 100%, 92%); /* Warna abu lembut untuk blok soal */
+  border: 1px solid #ddd; /* Garis luar */
+  border-radius: 8px; /* Sudut membulat */
+  padding: 20px;
+  margin-bottom: 20px; /* Jarak antar soal */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exercise:hover {
+  transform: scale(1.02); /* Efek pembesaran saat hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Bayangan lebih menonjol */
+}
+
+.exercise h4 {
+  font-size: 1.4em;
+  color: #000000; /* Warna teks judul soal */
+  margin-bottom: 15px;
+}
+
+.exercise ul {
+  list-style-type: none; /* Hapus titik pada list */
+  padding: 0;
+}
+
+.exercise ul li {
+  background: #eaf4fc; /* Warna biru muda */
+  color: #333; /* Warna teks */
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 5px; /* Sudut membulat */
+}
+
+.solution {
+  background: #f1f9ff; /* Warna biru lembut */
+  border-left: 5px solid #0056b3; /* Indikator vertikal */
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.solution h5 {
+  color: #0056b3; /* Warna biru untuk judul pembahasan */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.solution p,
+.solution ol,
+.solution ul {
+  color: #555; /* Warna teks pembahasan */
+  line-height: 1.6;
+}
+
+button {
+  background-color: #0056b3; /* Warna tombol biru */
+  color: white; /* Teks putih */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position:absolute;
+}
+
+button:hover {
+  background-color: #003d80; /* Warna lebih gelap saat hover */
+  transform: translateY(-2px); /* Efek naik saat hover */
+}
+</style>
+      <section class="practice section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Apriori Algorithm Practice Questions</h2>
+                    <p>
+                        Try to solve the following problems using the Apriori algorithm.
+                    </p>
+    
+                    <!-- Soal 1 -->
+                    <div class="exercise">
+                        <h4>Question 1</h4>
+                        <p>Given the following transaction data:</p>
+                        <ul>
+                            <li>Transaction 1: {milk, bread, butter}</li>
+                            <li>Transaction 2: {bread, butter}</li>
+                            <li>Transaction 3: {milk, bread, diaper}</li>
+                            <li>Transaction 4: {milk, bread, butter, diaper}</li>
+                            <li>Transaction 5: {milk, diaper}</li>
+                        </ul>
+                        <p>
+                          Determine itemsets that meet the minimum support of 2.
+                        </p>
+    
+                        <button
+                            class="btn btn-primary mt-3"
+                            onclick="toggleSolution('solution1')"
+                        >
+                        View Answer
+                        </button>
+                        <div id="solution1" class="solution" style="display: none">
+                            <h5>Discussion</h5>
+                            <p>Solution steps:</p>Identify the itemsets in each transaction.li>
+                                <li>Compute support for each itemset.</li>
+                                <li>Select itemsets that meet the minimum support of 2.</li>
+                            </ol>
+                            <p>Eligible itemsets:</p>
+                            <ul>
+                                <li>Milk: 4</li>
+                                <li>Bread: 4</li>
+                                <li>Butter: 2</li>
+                                <li>Diaper: 3</li>
+                            </ul>
+                            <p><strong>Explanation:</strong> Itemsets with support less than 2 are discarded because they do not meet the minimum support criteria. For example, "Butter" only appears in 2 transactions, so it exactly meets the minimum support criteria.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Soal 2 -->
+                    <div class="exercise mt-5">
+                        <h4>Question 2</h4>
+                        <p>
+                          Given the same transaction data as in Question 1. Calculate the association rules with a minimum confidence of 50%.
+                        </p>
+    
+                        <button
+                            class="btn btn-primary mt-3"
+                            onclick="toggleSolution('solution2')"
+                        >
+                        View Answer
+                        </button>
+                        <div id="solution2" class="solution" style="display: none">
+                            <h5>Discussion</h5>
+                            <p>Solution steps:</p>
+                            <ol>
+                                <li>Use itemsets that have met the minimum support from Question 1.</li>
+                                <li>Calculate the confidence for each pair of itemsets.</li>
+                                <li>Choose a pair that has confidence ≥ 50%.</li>
+                            </ol>
+                            <p>Example results:</p>
+                            <ul>
+                                <li>Milk -> Bread: 75%</li>
+                                <li>Diaper -> Milk: 66%</li>
+                            </ul>
+                            <p><strong>Explanation:</strong> Confidence is calculated using the formula:  
+                                \[
+                                \text{Confidence(A → B)} = \frac{\text{Support(A ∪ B)}}{\text{Support(A)}}
+                                \]  
+                                For example, for the rule<code>{Milk} -> {Bread}</code>:  
+                                - Support(Milk ∪ Bread) is 3 (Milk and Bread appear together in 3 transactions).
+                                - Support(Milk) is 4.
+                                Confidence = \( \frac{3}{4} = 75\% \).
+                                This rule meets the minimum confidence requirement of 50%.
+                            </p>
+                        </div>
+                    </div>
+    
+                    <!-- Soal 3 -->
+                    <div class="exercise mt-5">
+                        <h4>Question 3</h4>
+                        <p>
+                          Given transaction data:
+                        </p>
+                        <ul>
+                            <li>Transaction 1: {pen, notebook}</li>
+                            <li>Transaction 2: {pen, notebook, eraser}</li>
+                            <li>Transaction 3: {notebook, eraser}</li>
+                            <li>Transaction 4: {pen, eraser}</li>
+                            <li>Transaction 5: {notebook}</li>
+                        </ul>
+                        <p>
+                          Determine frequent itemsets with minimum support of 2, then calculate association rules with confidence ≥ 60%.
+                        </p>
+    
+                        <button
+                            class="btn btn-primary mt-3"
+                            onclick="toggleSolution('solution3')"
+                        >
+                        View Answer
+                        </button>
+                        <div id="solution3" class="solution" style="display: none">
+                            <h5>Discussion</h5>
+                            <p>Solution steps:</p>
+                            <ol>
+                              <li>Identify all itemsets from transaction data.</li>
+                              <li>Calculate support for each itemset.</li>
+                              <li>Select itemsets that meet the support requirements.</li>
+                              <li>Calculate confidence for the association rules formed.</li>
+                            </ol>
+                            <p>Results:</p>
+                            <ul>
+                                <li>Frequent itemsets: {pen}, {notebook}, {eraser}</li>
+                                <li>Example association rule: {pen} -> {notebook}: 66.6%</li>
+                            </ul>
+                            <p><strong>Explanation:</strong> Minimum support is met if the item appears in at least 2 transactions. Confidence is calculated as in Problem 2. For example, the rule <code>{pen} -> {notebook}</code>:  
+                              - Support(pen ∪ notebook) is 2.
+                              - Support(pen) is 3.
+                              Confidence = \( \frac{2}{3} = 66.6\% \), meets the minimum confidence requirement.
+                            </p>
+                        </div>
+                    </div>
+    
+                    <!-- Soal 4 -->
+                    <div class="exercise mt-5">
+                        <h4>Question 4</h4>
+                        <p>
+                          Provide an interpretation for the following association rules:
+                            <ul>
+                              <li>If someone buys Milk, then the probability of buying Bread is 75%.</li>
+                              <li>If someone buys Diapers, then the probability of buying Milk is 66%.</li>
+                            </ul>
+                        </p>
+    
+                        <button
+                            class="btn btn-primary mt-3"
+                            onclick="toggleSolution('solution4')"
+                        >
+                        View Answer
+                        </button>
+                        <div id="solution4" class="solution" style="display: none">
+                            <h5>Discussion</h5>
+                            <p>
+                              Interpretation:
+                                <ul>
+                                    <li>The first rule shows a strong relationship between Milk and Bread. Promotion of one product can increase purchases of the other product.</li>
+                                    <li>The second rule shows that Diaper and Milk have a significant relationship. This can be used for marketing strategies such as product combination discounts.</li>
+                                </ul>
+                            </p>
+                            <p><strong>Explanation:</strong> This interpretation helps in business decision making, such as designing promotions based on consumer purchasing patterns.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function toggleSolution(id) {
+            const solution = document.getElementById(id);
+            if (solution.style.display === "none") {
+                solution.style.display = "block";
+            } else {
+                solution.style.display = "none";
+            }
+        }
+    </script>
+    
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-10 me-auto mb-4">
+            <h4 class="text-white mb-3">Algoritma Apriori Learning</h4>
+            <p class="text-muted mt-lg-5 mb-4 mb-lg-0">
+              © 2024 Apriori Learning. All rights reserved.
+            </p>
+          </div>
+          <div class="col-lg-5 col-8">
+            <h5 class="text-white mb-3">Sitemap</h5>
+            <ul class="footer-menu d-flex flex-wrap">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Apriori</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="examples.html"
+                  >Programming Examples</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="videos.html">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="exercises.html">Exercises</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/headroom.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+      function toggleSolution(id) {
+        var solution = document.getElementById(id);
+        solution.style.display =
+          solution.style.display === "none" ? "block" : "none";
+      }
+    </script>
+  </body>
+</html>

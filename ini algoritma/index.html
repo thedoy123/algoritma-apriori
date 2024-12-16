@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Apriori Algorithm Learning Platform</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link href="css/tooplate-little-fashion.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <section class="preloader">
+      <div class="spinner">
+        <span class="sk-inner-circle"></span>
+      </div>
+    </section>
+
+    <main>
+      <!-- Navigation Bar -->
+
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"
+            ><strong><span>Learn</span> Apriori Algorithm</strong></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Apriori</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="examples.html"
+                  >Programming Examples</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="videos.html">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="exercises.html">Exercises</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <style>
+        /* Animasi Gelombang untuk Teks */
+        .wave-text {
+          display: inline-block;
+        }
+
+        .wave-text span {
+          display: inline-block;
+          animation: wave 1.5s ease-in-out infinite;
+        }
+
+        /* Keyframes untuk Efek Ombak */
+        @keyframes wave {
+          0%,
+          100% {
+            transform: translateY(0); /* Posisi awal */
+          }
+          50% {
+            transform: translateY(-15px); /* Gerakan naik */
+          }
+        }
+
+        /* Penundaan Animasi untuk Gelombang Teks */
+        .wave-text span:nth-child(1) {
+          animation-delay: 0s;
+        }
+        .wave-text span:nth-child(2) {
+          animation-delay: 0.1s;
+        }
+        .wave-text span:nth-child(3) {
+          animation-delay: 0.2s;
+        }
+        .wave-text span:nth-child(4) {
+          animation-delay: 0.3s;
+        }
+        .wave-text span:nth-child(5) {
+          animation-delay: 0.4s;
+        }
+        .wave-text span:nth-child(6) {
+          animation-delay: 0.5s;
+        }
+        .wave-text span:nth-child(7) {
+          animation-delay: 0.6s;
+        }
+        .wave-text span:nth-child(8) {
+          animation-delay: 0.7s;
+        }
+        .wave-text span:nth-child(9) {
+          animation-delay: 0.8s;
+        }
+        .site-header h1 {
+          font-size: 3rem;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 15px;
+        }
+
+        .site-header h1 .text-primary {
+          color: #007bff; /* Warna biru untuk 'Apriori' */
+        }
+      </style>
+      <!-- Header -->
+      <header class="site-header section-padding-img site-header-image index">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-12 header-info">
+              <h1>
+                <span class="wave-text">
+                  <span>L</span>
+                  <span>e</span>
+                  <span>a</span>
+                  <span>r</span>
+                  <span>n</span>
+                </span>
+                <span class="wave-text" style="color: #ff4400">
+                  <span>A</span>
+                  <span>p</span>
+                  <span>r</span>
+                  <span>i</span>
+                  <span>o</span>
+                  <span>r</span>
+                  <span>i</span>
+                </span>
+                <span class="wave-text" style="color: #0088cc">
+                  <span>A</span>
+                  <span>l</span>
+                  <span>g</span>
+                  <span>o</span>
+                  <span>r</span>
+                  <span>i</span>
+                  <span>t</span>
+                  <span>h</span>
+                  <span>m</span>
+                </span>
+              </h1>
+              <p style="color: black">
+                Master Apriori for data mining and market basket analysis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Introduction Section -->
+      <section class="about section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-12">
+              <h2 class="mb-4">
+                Introduction to the <span>Apriori Algorithm</span>
+              </h2>
+              <p>
+                Before we go into the explanation of the Apriori algorithm, it
+                is a good idea to first understand the basic concept of the
+                algorithm itself.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Programming Examples Section -->
+      <section class="about section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-12">
+              <h2 class="mb-4" style="color: #ff4400">what is an algorithm?</h2>
+              <p>
+                An algorithm is a series of logical steps that are
+                systematically designed to solve a problem or achieve a specific
+                goal. In the world of programming and computer science, an
+                algorithm serves as a guide or instruction that will be followed
+                by a program to process data and produce the desired output. In
+                other words, an algorithm is the core of problem-solving logic
+                that can be applied in various fields, both in technology,
+                business, and everyday life. Understanding what an algorithm is
+                will help us to more easily understand specific concepts such as
+                the Apriori algorithm, which is one of the algorithms used to
+                find patterns or relationships in large data sets.
+              </p>
+              <h3 class="mt-4">Key Characteristics of an Algorithm</h3>
+              <ul>
+                <li>
+                  <strong>Finiteness:</strong> The algorithm must have a finite
+                  number of steps and must stop after a certain number of steps.
+                </li>
+                <li>
+                  <strong>Definiteness:</strong> Each step must be clear,
+                  unambiguous, and understandable by anyone who reads the
+                  algorithm.
+                </li>
+                <li>
+                  <strong>Input:</strong> The algorithm accepts input data or
+                  initial values.
+                </li>
+                <li>
+                  <strong>Output:</strong> The algorithm produces an output that
+                  is relevant to the goal it seeks to achieve.
+                </li>
+                <li>
+                  <strong>Effectiveness:</strong> All steps must be practically
+                  executable within reasonable time and resource constraints.
+                </li>
+              </ul>
+
+              <h3 class="mt-4">Real-World Examples of Algorithms</h3>
+              <p>
+                Algorithms are not just used in programming but also in everyday
+                life. Here are some examples:
+              </p>
+              <ul>
+                <li>
+                  <strong>Cooking Recipe:</strong> The steps in a cooking recipe
+                  are an algorithm for preparing a dish.
+                </li>
+                <li>
+                  <strong>GPS Navigation:</strong> GPS systems use algorithms to
+                  find the fastest route to your destination.
+                </li>
+                <li>
+                  <strong>Sorting Mail:</strong> The process of sorting mail by
+                  postal code uses a simple sorting algorithm.
+                </li>
+              </ul>
+              <p><strong>In Programming:</strong></p>
+              <ul>
+                <li>
+                  Searching data in a database using search algorithms like
+                  Binary Search.
+                </li>
+                <li>
+                  Sorting data such as names or numbers using sorting algorithms
+                  like Bubble Sort or Merge Sort.
+                </li>
+              </ul>
+
+              <h3 class="mt-4">Importance of Algorithms</h3>
+              <p>
+                Algorithms are essential in programming and problem-solving
+                because they:
+              </p>
+              <ul>
+                <li>
+                  <strong>Solve Problems:</strong> They are at the core of all
+                  problem-solving in programming.
+                </li>
+                <li>
+                  <strong>Ensure Efficiency:</strong> Algorithms determine how
+                  fast and resource-efficient a problem can be solved.
+                </li>
+                <li>
+                  <strong>Support Scalability:</strong> Algorithms help
+                  applications to function well with both small and large data
+                  sets.
+                </li>
+                <li>
+                  <strong>Form the Foundation of Technology:</strong>
+                  Technologies like AI, blockchain, and machine learning are
+                  built on algorithms.
+                </li>
+              </ul>
+
+              <h3 class="mt-4">Types of Algorithms</h3>
+              <p>
+                Algorithms can be classified into different categories depending
+                on the problem they solve:
+              </p>
+              <ul>
+                <li>
+                  <strong>Sorting Algorithms:</strong> For ordering data, such
+                  as Bubble Sort, Quick Sort, and Merge Sort.
+                </li>
+                <li>
+                  <strong>Searching Algorithms:</strong> For finding elements in
+                  a data set, such as Linear Search and Binary Search.
+                </li>
+                <li>
+                  <strong>Graph Algorithms:</strong> For solving graph-related
+                  problems like finding the shortest path (Dijkstra) or
+                  discovering minimum spanning trees (Kruskal, Prim).
+                </li>
+                <li>
+                  <strong>Dynamic Programming Algorithms:</strong> For solving
+                  problems that can be broken into smaller subproblems, such as
+                  the Knapsack problem.
+                </li>
+                <li>
+                  <strong>Greedy Algorithms:</strong> For solving problems by
+                  making optimal choices at each step, such as Huffman Coding.
+                </li>
+              </ul>
+
+              <h3 class="mt-4">How to Design an Algorithm</h3>
+              <ol>
+                <li>
+                  <strong>Understand the Problem:</strong> Clearly define the
+                  problem and its objectives.
+                </li>
+                <li>
+                  <strong>Define Inputs and Outputs:</strong> Identify the
+                  required input data and expected results.
+                </li>
+                <li>
+                  <strong>Break Down the Problem:</strong> Decompose the problem
+                  into smaller, manageable parts.
+                </li>
+                <li>
+                  <strong>Outline Steps:</strong> Organize the steps logically
+                  to solve the problem.
+                </li>
+                <li>
+                  <strong>Test and Optimize:</strong> Test the algorithm for
+                  accuracy and optimize it for efficiency.
+                </li>
+              </ol>
+
+              <h4 class="mt-4">Example of Pseudocode:</h4>
+              <pre>
+          <code>
+            <!-- Find the largest number in an array -->
+            Start
+            1. Set max = array[0]
+            2. For i from 1 to length(array) - 1:
+                 If array[i] > max:
+                     Set max = array[i]
+            3. Return max
+            End
+          </code>
+        </pre>
+
+              <h3 class="mt-4">Benefits of Understanding Algorithms</h3>
+              <ul>
+                <li>
+                  Helps programmers create faster and more efficient programs.
+                </li>
+                <li>
+                  Provides a foundation for understanding advanced technologies
+                  like AI and data mining.
+                </li>
+                <li>
+                  Improves problem-solving skills, both in programming and in
+                  general life.
+                </li>
+              </ul>
+
+              <h3 class="mt-4">Fun Facts About Algorithms</h3>
+              <ul>
+                <li>
+                  The word "algorithm" comes from the name of the Persian
+                  mathematician Al-Khwarizmi, who popularized the concept.
+                </li>
+                <li>
+                  Algorithms are used in almost every aspect of digital life,
+                  including data encryption, web search, and social media
+                  recommendations.
+                </li>
+              </ul>
+              <!-- Add code examples here -->
+              <pre>
+                <code>
+                  <!-- PHP Apriori code example -->
+                  <?php
+                    // Sample code for generating frequent itemsets
+                    // ... (code example)
+                  ?>
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Videos Section -->
+      <section class="videos section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-12">
+              <h2 class="mb-4" style="color: #ff4400">
+                Characteristics of Algorithms
+              </h2>
+              <div class="container2p">
+                <p>
+                  Finiteness: The algorithm must have a finite number of steps
+                  and must stop after a certain number of steps.
+                </p>
+                <p>
+                  Definiteness: Each step in the algorithm must be clear and
+                  unambiguous. Each instruction must be understandable to anyone
+                  who reads the algorithm.
+                </p>
+                <p>
+                  Input: The algorithm receives external input (from the user or
+                  other systems) that is used in the calculation.
+                </p>
+                <p>
+                  Output: The algorithm produces output that is in accordance
+                  with the goal it wants to achieve. This output can be a value,
+                  status, or other useful information.
+                </p>
+                <p>
+                  Efficiency: The algorithm must be able to solve the problem
+                  with the minimum amount of time and resources, especially in
+                  terms of speed (computation time) and memory usage.
+                </p>
+              </div>
+
+              <!-- Embed YouTube or other video links here -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Exercises Section -->
+      <section class="exercises section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-12">
+              <h2 class="mb-4" style="color: #ff4400">
+                The Importance of Algorithms in Programming
+              </h2>
+              <p>
+                Algorithms are the core of programming as they help solve
+                problems efficiently and systematically. With algorithms,
+                programmers can create solutions that save time and resources.
+                Additionally, algorithms simplify the development of programs
+                that can be used by many people and adapted for various needs.
+                Without algorithms, the programming process would become
+                disorganized and less optimal.
+              </p>
+              <ul>
+                <li>
+                  <strong>Efficiency:</strong> Algorithms optimize the use of
+                  resources like time and memory, ensuring that programs run
+                  smoothly and quickly.
+                </li>
+                <li>
+                  <strong>Scalability:</strong> Well-designed algorithms can
+                  handle growing data and user demands without significant
+                  performance degradation.
+                </li>
+                <li>
+                  <strong>Reusability:</strong> Algorithms can be adapted and
+                  reused across various programs and projects, saving time in
+                  development.
+                </li>
+                <li>
+                  <strong>Problem-Solving:</strong> Algorithms provide a
+                  systematic approach to solving complex problems, making them
+                  manageable and solvable.
+                </li>
+                <li>
+                  <strong>Innovation:</strong> Understanding algorithms enables
+                  programmers to develop innovative solutions and contribute to
+                  advancements in technology.
+                </li>
+              </ul>
+              <p>
+                By mastering algorithms, programmers can write code that is not
+                only functional but also efficient, scalable, and adaptable to
+                future challenges. They are the backbone of technologies we use
+                daily, from search engines to recommendation systems.
+              </p>
+              <!-- Add exercises here -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-10 me-auto mb-4">
+            <h4 class="text-white mb-3">Apriori Algorithm Learning</h4>
+            <p class="text-muted mt-lg-5 mb-4 mb-lg-0">
+              © 2024 Apriori Learning. All rights reserved.
+            </p>
+          </div>
+          <div class="col-lg-5 col-8">
+            <h5 class="text-white mb-3">Sitemap</h5>
+            <ul class="footer-menu d-flex flex-wrap">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Apriori</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="examples.html"
+                  >Programming Examples</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="videos.html">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="exercises.html">Exercises</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/headroom.min.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>

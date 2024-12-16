@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Apriori Algorithm Learning Video</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link href="css/tooplate-little-fashion.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <section class="preloader">
+      <div class="spinner">
+        <span class="sk-inner-circle"></span>
+      </div>
+    </section>
+
+    <main>
+      <!-- Navigation Bar -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"
+            ><strong><span>Learn</span> Apriori Algorithm</strong></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Apriori</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="examples.html"
+                  >Programming Examples</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="videos.html">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="exercises.html">Exercises</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <style>
+        /* Animasi Gelombang untuk Teks */
+        .wave-text {
+          display: inline-block;
+          font-weight: bold;
+        }
+
+        .wave-text span {
+          display: inline-block;
+          animation: wave 1.5s ease-in-out infinite;
+        }
+
+        /* Keyframes untuk Efek Ombak */
+        @keyframes wave {
+          0%,
+          100% {
+            transform: translateY(0); /* Posisi awal */
+          }
+          50% {
+            transform: translateY(-15px); /* Gerakan naik */
+          }
+        }
+
+        /* Penundaan Animasi untuk Gelombang Teks */
+        .wave-text span:nth-child(1) {
+          animation-delay: 0s;
+        }
+        .wave-text span:nth-child(2) {
+          animation-delay: 0.1s;
+        }
+        .wave-text span:nth-child(3) {
+          animation-delay: 0.2s;
+        }
+        .wave-text span:nth-child(4) {
+          animation-delay: 0.3s;
+        }
+        .wave-text span:nth-child(5) {
+          animation-delay: 0.4s;
+        }
+        .wave-text span:nth-child(6) {
+          animation-delay: 0.5s;
+        }
+        .wave-text span:nth-child(7) {
+          animation-delay: 0.6s;
+        }
+        .wave-text span:nth-child(8) {
+          animation-delay: 0.7s;
+        }
+        .wave-text span:nth-child(9) {
+          animation-delay: 0.8s;
+        }
+        .wave-text span:nth-child(10) {
+          animation-delay: 0.9s;
+        }
+        .wave-text span:nth-child(11) {
+          animation-delay: 0.1s;
+        }
+        .wave-text span:nth-child(12) {
+          animation-delay: 0.11s;
+        }
+
+        .site-header h1 {
+          font-size: 3rem;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 15px;
+        }
+
+        .site-header h1 .text-primary {
+          color: #007bff; /* Warna biru untuk 'Apriori' */
+        }
+      </style>
+
+      <header class="site-header header-with-bg section-padding-img">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-12 header-info">
+              <h1>
+                <span class="wave-text">
+                  <span>A</span>
+                  <span>p</span>
+                  <span>r</span>
+                  <span>i</span>
+                  <span>o</span>
+                  <span>r</span>
+                  <span>i</span>
+                </span>
+                <span class="wave-text" style="color: #ff4400">
+                  <span>A</span>
+                  <span>l</span>
+                  <span>g</span>
+                  <span>o</span>
+                  <span>r</span>
+                  <span>i</span>
+                  <span>t</span>
+                  <span>h</span>
+                  <span>m</span>
+                </span>
+                <span class="wave-text">
+                  <span>L</span>
+                  <span>e</span>
+                  <span>a</span>
+                  <span>r</span>
+                  <span>n</span>
+                  <span>i</span>
+                  <span>n</span>
+                  <span>g</span>
+                </span>
+                <span class="wave-text" style="color: #0088cc">
+                  <span>V</span>
+                  <span>i</span>
+                  <span>d</span>
+                  <span>e</span>
+                  <span>o</span>
+                </span>
+              </h1>
+              <p style="color: black">
+                Watch the following learning videos to understand more about the
+                Apriori algorithm.
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="videos section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4">
+              <h4>Video 1: UNDERSTANDING THE APRIORI ALGORITHM</h4>
+              <div class="video-container">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/ab06IZUR7EI?si=JEcsaIBBAM-a_CWd"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="mt-2">
+                This video explains the basics of the Apriori algorithm,
+                including key concepts and how it works to find patterns in
+                transaction data.
+              </p>
+            </div>
+
+            <div class="col-lg-6 col-md-12 mb-4">
+              <h4>Video 2: Implementation of Apriori Algorithm</h4>
+              <div class="video-container">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/Hz-o1dojLWg?si=AumSIWx-tT2clw3r"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="mt-2">
+                Learn how to implement the Apriori algorithm using programming
+                languages. This video covers the implementation steps with code
+                examples.
+              </p>
+            </div>
+
+            <div class="col-lg-6 col-md-12 mb-4">
+              <h4>Video 3: Analysis of Association Rules</h4>
+              <div class="video-container">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/xrntsIvRUD0?si=t3kWLOpBAPtM5S-s"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="mt-2">
+                This video explains how to analyze association rules generated
+                by the Apriori algorithm, and how to determine support and
+                confidence.
+              </p>
+            </div>
+
+            <div class="col-lg-6 col-md-12 mb-4">
+              <h4>Video 4: Apriori Algorithm Case Study</h4>
+              <div class="video-container">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/Vkk77SAEZ1k?si=FaQ-beYBuPm4SgSS"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="mt-2">
+                A case study demonstrating the use of the Apriori algorithm in
+                real transaction data, helps users understand the practical
+                application of this algorithm.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-10 me-auto mb-4">
+            <h4 class="text-white mb-3">Apriori Algorithm Learning</h4>
+            <p class="text-muted mt-lg-5 mb-4 mb-lg-0">
+              © 2024 Apriori Learning. All rights reserved.
+            </p>
+          </div>
+          <div class="col-lg-5 col-8">
+            <h5 class="text-white mb-3">Sitemap</h5>
+            <ul class="footer-menu d-flex flex-wrap">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Apriori</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="examples.html"
+                  >Programming Examples</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="videos.html">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="exercises.html">Exercises</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/headroom.min.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>

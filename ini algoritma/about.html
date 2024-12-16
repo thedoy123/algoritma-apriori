@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Apriori Algorithm Learning Platform</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link href="css/tooplate-little-fashion.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <section class="preloader">
+      <div class="spinner">
+        <span class="sk-inner-circle"></span>
+      </div>
+    </section>
+
+    <main>
+      <!-- Navigation Bar -->
+
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"
+            ><strong><span>Learn</span> Apriori Algorithm</strong></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="about.html">About Apriori</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="examples.html"
+                  >Programming Examples</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="videos.html">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="exercises.html">Exercises</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <style>
+        /* Animasi Gelombang untuk Teks */
+        .wave-text {
+          display: inline-block;
+        }
+
+        .wave-text span {
+          display: inline-block;
+          animation: wave 1.5s ease-in-out infinite;
+        }
+
+        /* Keyframes untuk Efek Ombak */
+        @keyframes wave {
+          0%,
+          100% {
+            transform: translateY(0); /* Posisi awal */
+          }
+          50% {
+            transform: translateY(-15px); /* Gerakan naik */
+          }
+        }
+
+        /* Penundaan Animasi untuk Gelombang Teks */
+        .wave-text span:nth-child(1) {
+          animation-delay: 0s;
+        }
+        .wave-text span:nth-child(2) {
+          animation-delay: 0.1s;
+        }
+        .wave-text span:nth-child(3) {
+          animation-delay: 0.2s;
+        }
+        .wave-text span:nth-child(4) {
+          animation-delay: 0.3s;
+        }
+        .wave-text span:nth-child(5) {
+          animation-delay: 0.4s;
+        }
+        .wave-text span:nth-child(6) {
+          animation-delay: 0.5s;
+        }
+        .wave-text span:nth-child(7) {
+          animation-delay: 0.6s;
+        }
+        .wave-text span:nth-child(8) {
+          animation-delay: 0.7s;
+        }
+        .wave-text span:nth-child(9) {
+          animation-delay: 0.8s;
+        }
+        .site-header h1 {
+          font-size: 3rem;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 15px;
+        }
+
+        .site-header h1 .text-primary {
+          color: #007bff; /* Warna biru untuk 'Apriori' */
+        }
+      </style>
+
+      <!-- Header -->
+      <header class="site-header section-padding-img site-header-image about">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-12 header-info">
+              <h1>
+                <span class="wave-text">
+                  <span>A</span>
+                  <span>b</span>
+                  <span>o</span>
+                  <span>u</span>
+                  <span>t</span>
+                </span>
+                <span class="wave-text" style="color: #ff4400">
+                  <span>A</span>
+                  <span>p</span>
+                  <span>r</span>
+                  <span>i</span>
+                  <span>o</span>
+                  <span>r</span>
+                  <span>i</span>
+                </span>
+                <span class="wave-text" style="color: #0088cc">
+                  <span>A</span>
+                  <span>l</span>
+                  <span>g</span>
+                  <span>o</span>
+                  <span>r</span>
+                  <span>i</span>
+                  <span>t</span>
+                  <span>h</span>
+                  <span>m</span>
+                </span>
+              </h1>
+              <p style="color: black">
+                Master Apriori for data mining and market basket analysis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Programming Examples Section -->
+      <section class="about section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-12">
+              <h2 class="mb-4" style="color: #ff4400">
+                Understanding the Apriori Algorithm in Depth
+              </h2>
+              <p>
+                The Apriori algorithm is one of the fundamental algorithms in
+                data mining, particularly used for mining association rules and
+                discovering frequent itemsets. It was introduced by Rakesh
+                Agrawal and Ramakrishnan Srikant in 1994 and remains a
+                cornerstone in the field of data analytics. The algorithm is
+                widely applied in industries such as retail, e-commerce, and
+                finance to uncover patterns and insights within large
+                transactional datasets.
+              </p>
+
+              <h3 class="mt-4">Core Objectives of Apriori Algorithm</h3>
+              <p>
+                The primary goal of the Apriori algorithm is to identify
+                relationships between items in a dataset. These relationships
+                are expressed as "association rules", which reveal how the
+                presence of certain items in a transaction implies the presence
+                of others. For example, if a customer buys bread, they are
+                likely to buy butter as well.
+              </p>
+
+              <h3 class="mt-4">Key Concepts in Apriori Algorithm</h3>
+              <ul>
+                <li>
+                  <strong>Frequent Itemsets:</strong> These are sets of items
+                  that appear frequently together in a dataset. For instance, in
+                  a retail store, "milk and cereal" might form a frequent
+                  itemset.
+                </li>
+                <li>
+                  <strong>Support:</strong> The frequency of an itemset
+                  appearing in the dataset. It is calculated as:
+                  <pre>
+Support = (Number of transactions containing the itemset) / (Total number of transactions)</pre
+                  >
+                </li>
+                <li>
+                  <strong>Confidence:</strong> Measures the likelihood that the
+                  presence of item A in a transaction leads to the presence of
+                  item B. It is calculated as:
+                  <pre>Confidence = Support(A ∪ B) / Support(A)</pre>
+                </li>
+                <li>
+                  <strong>Lift:</strong> Evaluates the strength of the
+                  association between two items. A lift value greater than 1
+                  indicates a positive correlation. It is calculated as:
+                  <pre>Lift = Confidence / Support(B)</pre>
+                </li>
+                <li>
+                  <strong>Apriori Property:</strong> States that all subsets of
+                  a frequent itemset must also be frequent. This property is
+                  essential in reducing the computational complexity of the
+                  algorithm.
+                </li>
+              </ul>
+
+              <h3 class="mt-4">How Does the Apriori Algorithm Work?</h3>
+              <p>
+                The Apriori algorithm operates in the following systematic
+                steps:
+              </p>
+              <ol>
+                <li>
+                  <strong>Initialization:</strong> Begin by identifying
+                  individual items in the dataset that meet a minimum support
+                  threshold.
+                </li>
+                <li>
+                  <strong>Candidate Generation:</strong> Generate larger
+                  itemsets (e.g., pairs, triples) by combining smaller frequent
+                  itemsets.
+                </li>
+                <li>
+                  <strong>Pruning:</strong> Eliminate itemsets that do not meet
+                  the minimum support criterion based on the Apriori property.
+                </li>
+                <li>
+                  <strong>Repeat:</strong> Continue generating and pruning
+                  itemsets until no more frequent itemsets can be generated.
+                </li>
+                <li>
+                  <strong>Rule Generation:</strong> Derive association rules
+                  from the frequent itemsets and evaluate them using confidence
+                  and lift metrics.
+                </li>
+              </ol>
+
+              <style>
+                h3 {
+                  color: #333;
+                }
+
+                table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  margin: 20px 0;
+                  font-size: 0.9em;
+                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+                }
+
+                table thead tr {
+                  background-color: #009879;
+                  color: #ffffff;
+                  text-align: left;
+                }
+
+                table th,
+                table td {
+                  padding: 12px 15px;
+                  text-align: center;
+                }
+
+                table tbody tr {
+                  border-bottom: 1px solid #dddddd;
+                }
+
+                table tbody tr:nth-of-type(even) {
+                  background-color: #f3f3f3;
+                }
+
+                table tbody tr:last-of-type {
+                  border-bottom: 2px solid #009879;
+                }
+
+                table tbody tr:hover {
+                  background-color: #f1f1f1;
+                  cursor: pointer;
+                }
+
+                pre {
+                  background: #f4f4f4;
+                  padding: 10px;
+                  border-left: 3px solid #009879;
+                  font-size: 0.95em;
+                }
+
+                ul {
+                  margin-left: 20px;
+                }
+              </style>
+
+              <h3 class="mt-4">
+                Example Dataset and Apriori Algorithm Calculation
+              </h3>
+              <p>We will use the following simple dataset of transactions:</p>
+              <pre>
+T1: {Milk, Bread, Butter}
+T2: {Bread, Butter}
+T3: {Milk, Bread}
+T4: {Milk, Bread, Butter}
+T5: {Milk, Butter}
+  </pre
+              >
+              <p><strong>Steps of the Apriori Algorithm:</strong></p>
+              <ol>
+                <li>
+                  <strong>Calculate Support for Single Items</strong>
+                  <p>
+                    Support is calculated as the number of transactions
+                    containing the item divided by the total number of
+                    transactions.
+                  </p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Item</th>
+                        <th>Number of Transactions</th>
+                        <th>Support</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Milk</td>
+                        <td>4</td>
+                        <td>4/5 = 0.8</td>
+                      </tr>
+                      <tr>
+                        <td>Bread</td>
+                        <td>4</td>
+                        <td>4/5 = 0.8</td>
+                      </tr>
+                      <tr>
+                        <td>Butter</td>
+                        <td>4</td>
+                        <td>4/5 = 0.8</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    Assume the minimum support threshold is 0.6. All single
+                    items meet the threshold, so we proceed to item
+                    combinations.
+                  </p>
+                </li>
+                <li>
+                  <strong>Two-Item Combinations (Pairs)</strong>
+                  <p>Possible pairs of items are:</p>
+                  <ul>
+                    <li>{Milk, Bread}</li>
+                    <li>{Milk, Butter}</li>
+                    <li>{Bread, Butter}</li>
+                  </ul>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Pair</th>
+                        <th>Number of Transactions</th>
+                        <th>Support</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{Milk, Bread}</td>
+                        <td>3</td>
+                        <td>3/5 = 0.6</td>
+                      </tr>
+                      <tr>
+                        <td>{Milk, Butter}</td>
+                        <td>3</td>
+                        <td>3/5 = 0.6</td>
+                      </tr>
+                      <tr>
+                        <td>{Bread, Butter}</td>
+                        <td>3</td>
+                        <td>3/5 = 0.6</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>All pairs meet the minimum support threshold.</p>
+                </li>
+                <li>
+                  <strong>Three-Item Combinations (Triplets)</strong>
+                  <p>The possible three-item combination is:</p>
+                  <ul>
+                    <li>{Milk, Bread, Butter}</li>
+                  </ul>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Triplet</th>
+                        <th>Number of Transactions</th>
+                        <th>Support</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{Milk, Bread, Butter}</td>
+                        <td>2</td>
+                        <td>2/5 = 0.4</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    Since the support for {Milk, Bread, Butter} is 0.4, which is
+                    lower than the minimum support threshold (0.6), this
+                    combination is discarded.
+                  </p>
+                </li>
+                <li>
+                  <strong>Final Frequent Itemsets</strong>
+                  <p>
+                    Frequent itemsets after filtering based on the support
+                    threshold:
+                  </p>
+                  <ul>
+                    <li>Single items: {Milk}, {Bread}, {Butter}</li>
+                    <li>
+                      Item pairs: {Milk, Bread}, {Milk, Butter}, {Bread, Butter}
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Generate Association Rules</strong>
+                  <p>
+                    From the frequent itemsets, we can generate association
+                    rules and calculate confidence and lift.
+                  </p>
+                  <p>
+                    For example, consider the rule:
+                    <em>If {Milk}, then {Bread}</em>.
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Confidence:</strong> (Support for {Milk, Bread}) /
+                      (Support for {Milk}) = 0.6 / 0.8 = 0.75
+                    </li>
+                    <li>
+                      <strong>Lift:</strong> (Confidence) / (Support for
+                      {Bread}) = 0.75 / 0.8 = 0.9375
+                    </li>
+                  </ul>
+                  <p>Another rule:</p>
+                  <ul>
+                    <li>
+                      <em>If {Bread, Butter}, then {Milk}</em>: Confidence =
+                      1.0, Lift = 1.25
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+              <h3 class="mt-4">Applications of Apriori Algorithm</h3>
+              <ul>
+                <li>
+                  <strong>Market Basket Analysis:</strong> Used to determine
+                  product combinations that are frequently purchased together.
+                </li>
+                <li>
+                  <strong>Fraud Detection:</strong> Identifying unusual patterns
+                  that may indicate fraudulent transactions.
+                </li>
+                <li>
+                  <strong>Healthcare:</strong> Finding relationships between
+                  symptoms and diseases or between treatments and outcomes.
+                </li>
+                <li>
+                  <strong>Content Recommendations:</strong> Recommending
+                  products or content based on user behavior.
+                </li>
+              </ul>
+
+              <h3 class="mt-4">Advantages of Apriori Algorithm</h3>
+              <ul>
+                <li>Easy to understand and implement.</li>
+                <li>Applicable to a wide range of datasets.</li>
+                <li>
+                  Efficiently reduces computational overhead using the Apriori
+                  property.
+                </li>
+              </ul>
+
+              <h3 class="mt-4">Challenges and Limitations</h3>
+              <ul>
+                <li>
+                  <strong>Computational Cost:</strong> For large datasets, the
+                  number of candidate itemsets grows exponentially.
+                </li>
+                <li>
+                  <strong>High Memory Usage:</strong> Storing and processing
+                  candidate itemsets can consume significant memory.
+                </li>
+                <li>
+                  <strong>Dependency on Parameters:</strong> Results are
+                  sensitive to the choice of minimum support and confidence
+                  thresholds.
+                </li>
+              </ul>
+
+              <h3 class="mt-4">Enhancements to Apriori Algorithm</h3>
+              <p>
+                Several improvements have been proposed to address the
+                limitations of Apriori, such as:
+              </p>
+              <ul>
+                <li>
+                  <strong>FP-Growth Algorithm:</strong> Uses a tree structure to
+                  avoid candidate generation, making it faster and more
+                  efficient.
+                </li>
+                <li>
+                  <strong>ECLAT Algorithm:</strong> Focuses on vertical data
+                  representation to improve performance.
+                </li>
+              </ul>
+
+              <h3 class="mt-4">Real-World Case Study</h3>
+              <p>
+                A supermarket used the Apriori algorithm to analyze transaction
+                data and discovered that customers who bought diapers were also
+                likely to buy beer. This insight led to strategic placement of
+                these items, increasing overall sales.
+              </p>
+
+              <h3 class="mt-4">Why Learn Apriori Algorithm?</h3>
+              <p>
+                The Apriori algorithm is an essential tool for anyone interested
+                in data science, analytics, or machine learning. Understanding
+                it provides foundational knowledge for more advanced concepts in
+                data mining and pattern recognition.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-10 me-auto mb-4">
+            <h4 class="text-white mb-3">Apriori Algorithm Learning</h4>
+            <p class="text-muted mt-lg-5 mb-4 mb-lg-0">
+              © 2024 Apriori Learning. All rights reserved.
+            </p>
+          </div>
+          <div class="col-lg-5 col-8">
+            <h5 class="text-white mb-3">Sitemap</h5>
+            <ul class="footer-menu d-flex flex-wrap">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Apriori</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="examples.html"
+                  >Programming Examples</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="videos.html">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="exercises.html">Exercises</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/headroom.min.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>

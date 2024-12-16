@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Apriori Algorithm Learning Platform</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link href="css/tooplate-little-fashion.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <section class="preloader">
+      <div class="spinner">
+        <span class="sk-inner-circle"></span>
+      </div>
+    </section>
+
+    <main>
+      <!-- Navigation Bar -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"
+            ><strong><span>Learn</span> Apriori Algorithm</strong></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Apriori</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="examples.html"
+                  >Programming Examples</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="videos.html">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="exercises.html">Exercises</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <style>
+        /* Animasi Gelombang untuk Teks */
+        .wave-text {
+          display: inline-block;
+          font-weight: bold;
+        }
+
+        .wave-text span {
+          display: inline-block;
+          animation: wave 1.5s ease-in-out infinite;
+        }
+
+        /* Keyframes untuk Efek Ombak */
+        @keyframes wave {
+          0%,
+          100% {
+            transform: translateY(0); /* Posisi awal */
+          }
+          50% {
+            transform: translateY(-15px); /* Gerakan naik */
+          }
+        }
+
+        /* Penundaan Animasi untuk Gelombang Teks */
+        .wave-text span:nth-child(1) {
+          animation-delay: 0s;
+        }
+        .wave-text span:nth-child(2) {
+          animation-delay: 0.1s;
+        }
+        .wave-text span:nth-child(3) {
+          animation-delay: 0.2s;
+        }
+        .wave-text span:nth-child(4) {
+          animation-delay: 0.3s;
+        }
+        .wave-text span:nth-child(5) {
+          animation-delay: 0.4s;
+        }
+        .wave-text span:nth-child(6) {
+          animation-delay: 0.5s;
+        }
+        .wave-text span:nth-child(7) {
+          animation-delay: 0.6s;
+        }
+        .wave-text span:nth-child(8) {
+          animation-delay: 0.7s;
+        }
+        .wave-text span:nth-child(9) {
+          animation-delay: 0.8s;
+        }
+        .wave-text span:nth-child(10) {
+          animation-delay: 0.9s;
+        }
+        .wave-text span:nth-child(11) {
+          animation-delay: 0.1s;
+        }
+        .wave-text span:nth-child(12) {
+          animation-delay: 0.11s;
+        }
+
+        .site-header h1 {
+          font-size: 3rem;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 15px;
+        }
+
+        .site-header h1 .text-primary {
+          color: #007bff; /* Warna biru untuk 'Apriori' */
+        }
+      </style>
+
+      <header class="site-header background-image-header section-padding-img">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-12 header-info">
+              <h1>
+                <span class="wave-text">
+                  <span>A</span>
+                  <span>p</span>
+                  <span>r</span>
+                  <span>i</span>
+                  <span>o</span>
+                  <span>r</span>
+                  <span>i</span>
+                </span>
+                <br />
+                <span class="wave-text" style="color: #ff4400">
+                  <span>A</span>
+                  <span>l</span>
+                  <span>g</span>
+                  <span>o</span>
+                  <span>r</span>
+                  <span>i</span>
+                  <span>t</span>
+                  <span>h</span>
+                  <span>m</span>
+                </span>
+                <span class="wave-text">
+                  <span>P</span>
+                  <span>r</span>
+                  <span>o</span>
+                  <span>g</span>
+                  <span>r</span>
+                  <span>a</span>
+                  <span>m</span>
+                  <span>m</span>
+                  <span>i</span>
+                  <span>n</span>
+                  <span>g</span>
+                </span>
+                <span class="wave-text" style="color: #0088cc">
+                  <span>E</span>
+                  <span>x</span>
+                  <span>a</span>
+                  <span>m</span>
+                  <span>p</span>
+                  <span>l</span>
+                  <span>e</span>
+                </span>
+              </h1>
+              <p style="color: black">
+                An example of implementing the Apriori algorithm code that can
+                be studied and tried
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+          line-height: 1.6;
+        }
+        h1,
+        h2 {
+          color: #333;
+        }
+        pre {
+          background-color: #f4f4f4;
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          overflow-x: auto;
+        }
+        code {
+          color: #2a7ae2;
+          font-family: "Courier New", Courier, monospace;
+        }
+      </style>
+      <section class="examples section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <h2 style="color: #ff4400">Implementation Example in Python</h2>
+              <p>
+                Here is a simple example of the Apriori algorithm in Python:
+              </p>
+
+              <pre class="code-block">
+  from itertools import combinations
+
+  # Data transaksi
+  transaksi = [
+      {'milk', 'bread'},
+      {'milk', 'diaper', 'beer', 'bread'},
+      {'milk', 'diaper', 'beer', 'coke'},
+      {'bread', 'milk', 'diaper', 'beer'},
+      {'bread', 'milk', 'diaper', 'coke'},
+  ]
+
+  # Ambang minimum support
+  min_support = 2
+
+  # Fungsi untuk menghitung support
+  def calculate_support(itemset, transaksi):
+      return sum(1 for transaction in transaksi if itemset.issubset(transaction))
+
+  # Algoritma Apriori
+  def apriori(transaksi, min_support):
+      # Mengumpulkan semua item unik dari transaksi
+      items = set(item for transaction in transaksi for item in transaction)
+      frequent_itemsets = []
+      k = 1  # Panjang itemset
+      
+      # Inisialisasi dengan item tunggal
+      current_itemsets = [{item} for item in items]
+      
+      while current_itemsets:
+          # Hitung support untuk setiap itemset
+          valid_itemsets = []
+          unique_itemsets = set(frozenset(itemset) for itemset in current_itemsets)
+          for itemset in unique_itemsets:
+              support = calculate_support(itemset, transaksi)
+              if support >= min_support:
+                  frequent_itemsets.append((itemset, support))
+                  valid_itemsets.append(itemset)
+          
+          # Buat kombinasi itemset berikutnya
+          k += 1
+          current_itemsets = [
+              set1 | set2
+              for i, set1 in enumerate(valid_itemsets)
+              for set2 in valid_itemsets[i+1:]
+              if len(set1 | set2) == k
+          ]
+      
+      return frequent_itemsets
+
+  # Menjalankan algoritma
+  hasil_itemsets = apriori(transaksi, min_support)
+
+  # Tampilkan hasil
+  print("Frequent Itemsets:")
+  for itemset, support in hasil_itemsets:
+      print(f"Itemset: {set(itemset)}, Support: {support}")
+
+              </pre>
+
+              <p>
+                The above example searches for itemsets that meet a certain
+                minimum support. You can try this code in a Python environment
+                such as Jupyter Notebook or Google Colab.
+              </p>
+
+              <h2 style="color: #ff4400">Implementation Example in PHP</h2>
+              <p>Here is a simple example of the Apriori algorithm in PHP:</p>
+
+              <pre class="code-block">
+&lt;?php
+// Data transaksi
+$transaksi = [
+    ['milk', 'bread'],
+    ['milk', 'diaper', 'beer', 'bread'],
+    ['milk', 'diaper', 'beer', 'coke'],
+    ['bread', 'milk', 'diaper', 'beer'],
+    ['bread', 'milk', 'diaper', 'coke']
+];
+
+// Ambang minimum support
+$min_support = 2;
+
+// Fungsi Apriori
+function apriori($transaksi, $min_support) {
+    $itemset = [];
+    foreach ($transaksi as $items) {
+        foreach ($items as $item) {
+            $itemset[$item] = ($itemset[$item] ?? 0) + 1;
+        }
+    }
+    
+    $result = [];
+    foreach ($itemset as $item => $support) {
+        if ($support >= $min_support) {
+            $result[] = [$item, $support];
+        }
+    }
+    return $result;
+}
+
+print_r(apriori($transaksi, $min_support));
+?&gt;
+              </pre>
+
+              <p>
+                The PHP code above displays itemsets that meet the minimum
+                support specified. You can run this code on a local server to
+                test the results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-10 me-auto mb-4">
+            <h4 class="text-white mb-3">Apriori Algorithm Learning</h4>
+            <p class="text-muted mt-lg-5 mb-4 mb-lg-0">
+              © 2024 Apriori Learning. All rights reserved.
+            </p>
+          </div>
+          <div class="col-lg-5 col-8">
+            <h5 class="text-white mb-3">Sitemap</h5>
+            <ul class="footer-menu d-flex flex-wrap">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Apriori</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="examples.html"
+                  >Programming Examples</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="videos.html">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="exercises.html">Exercises</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/headroom.min.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>
